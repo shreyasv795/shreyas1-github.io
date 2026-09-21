@@ -1,579 +1,986 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shreyas Mobile Shop</title>
+<title>Vishrutha Hospital | Advanced Healthcare</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        body {
-            background: #f5f7fb;
-            color: #222;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        /* HEADER */
-        header {
-            background: #111827;
-            color: white;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+body{
+    background:#f5fbff;
+    color:#123;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
+/* NAVBAR */
 
-        .logo span {
-            color: #00d4ff;
-        }
+header{
+    background:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-        }
+.logo{
+    font-size:27px;
+    font-weight:bold;
+    color:#087f8c;
+}
 
-        nav a:hover {
-            color: #00d4ff;
-        }
+.logo span{
+    color:#0756a3;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 520px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px 8%;
-            background: linear-gradient(135deg, #111827, #2563eb);
-            color: white;
-        }
+nav a{
+    text-decoration:none;
+    margin-left:25px;
+    color:#123;
+    font-weight:600;
+}
 
-        .hero-text {
-            max-width: 550px;
-        }
+nav a:hover{
+    color:#087f8c;
+}
 
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
+/* HERO */
 
-        .hero h1 span {
-            color: #00d4ff;
-        }
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    padding:80px 7%;
+    background:
+    linear-gradient(120deg,
+    rgba(3,72,112,.95),
+    rgba(0,145,155,.85));
+    color:white;
+}
 
-        .hero p {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
+.hero-content{
+    max-width:650px;
+}
 
-        .buttons a {
-            display: inline-block;
-            padding: 14px 25px;
-            margin-right: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.hero h1{
+    font-size:58px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
 
-        .call-btn {
-            background: #00d4ff;
-            color: #111827;
-        }
+.hero h1 span{
+    color:#8ff3df;
+}
 
-        .whatsapp-btn {
-            background: #22c55e;
-            color: white;
-        }
+.hero p{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
 
-        .phone-image {
-            font-size: 180px;
-        }
+.btn{
+    display:inline-block;
+    padding:15px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-right:10px;
+}
 
-        /* SECTION */
-        section {
-            padding: 70px 8%;
-        }
+.primary{
+    background:white;
+    color:#075b83;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.secondary{
+    border:2px solid white;
+    color:white;
+}
 
-        .section-title h2 {
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
+/* STATS */
 
-        .section-title p {
-            color: #666;
-        }
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    padding:35px;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
 
-        /* PRODUCTS */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
+.stat{
+    text-align:center;
+}
 
-        .product {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+.stat h2{
+    color:#07868c;
+    font-size:32px;
+}
 
-        .product:hover {
-            transform: translateY(-8px);
-        }
+/* SECTION */
 
-        .product .mobile-icon {
-            font-size: 80px;
-            margin-bottom: 15px;
-        }
+section{
+    padding:80px 7%;
+}
 
-        .product h3 {
-            margin-bottom: 10px;
-        }
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
 
-        .product p {
-            color: #666;
-            margin-bottom: 15px;
-        }
+.section-title h2{
+    font-size:38px;
+    color:#075b83;
+}
 
-        .price {
-            color: #2563eb;
-            font-size: 20px;
-            font-weight: bold;
-        }
+.section-title p{
+    margin-top:10px;
+    color:#666;
+}
 
-        /* SERVICES */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+/* CARDS */
 
-        .service {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-        }
+.cards{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
 
-        .service-icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
+.card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
 
-        .service h3 {
-            margin-bottom: 10px;
-        }
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
 
-        .service p {
-            color: #666;
-            line-height: 1.6;
-        }
+.card .icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
 
-        /* OFFER */
-        .offer {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            color: white;
-            border-radius: 20px;
-            text-align: center;
-            padding: 60px 20px;
-        }
+.card h3{
+    color:#075b83;
+    margin-bottom:12px;
+}
 
-        .offer h2 {
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
+.card p{
+    color:#666;
+    line-height:1.6;
+}
 
-        .offer p {
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
+/* WHY US */
 
-        /* CONTACT */
-        .contact {
-            background: #111827;
-            color: white;
-            text-align: center;
-        }
+.why{
+    background:#eaf8f8;
+}
 
-        .contact h2 {
-            font-size: 35px;
-            margin-bottom: 20px;
-        }
+.why-box{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
 
-        .contact p {
-            margin: 10px 0;
-            font-size: 18px;
-        }
+.why-item{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+}
 
-        .contact a {
-            color: #00d4ff;
-            text-decoration: none;
-        }
+.why-item h3{
+    color:#087f8c;
+    margin-bottom:10px;
+}
 
-        /* FOOTER */
-        footer {
-            background: #080d17;
-            color: #aaa;
-            text-align: center;
-            padding: 20px;
-        }
+/* BRANCHES */
 
-        /* WHATSAPP FLOAT */
-        .whatsapp-float {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background: #22c55e;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            text-decoration: none;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            z-index: 999;
-        }
+.branches{
+    background:#063f59;
+    color:white;
+}
 
-        /* MOBILE */
-        @media (max-width: 900px) {
+.branches .section-title h2{
+    color:white;
+}
 
-            header {
-                padding: 15px 5%;
-            }
+.branch-card{
+    background:white;
+    color:#123;
+    padding:28px;
+    border-radius:18px;
+    transition:.3s;
+}
 
-            nav {
-                display: none;
-            }
+.branch-card:hover{
+    transform:scale(1.03);
+}
 
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 60px 5%;
-            }
+.branch-card h3{
+    color:#075b83;
+    font-size:24px;
+    margin-bottom:10px;
+}
 
-            .hero h1 {
-                font-size: 38px;
-            }
+.branch-card p{
+    color:#555;
+    line-height:1.6;
+}
 
-            .phone-image {
-                font-size: 120px;
-                margin-top: 40px;
-            }
+.branch-btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#087f8c;
+    color:white;
+    padding:10px 18px;
+    border-radius:20px;
+    text-decoration:none;
+}
 
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-            }
+/* DOCTORS */
 
-            .services {
-                grid-template-columns: 1fr;
-            }
-        }
+.doctor{
+    text-align:center;
+}
 
-        @media (max-width: 500px) {
+.doctor-img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:#d9f3f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:45px;
+    margin:auto auto 15px;
+}
 
-            .products {
-                grid-template-columns: 1fr;
-            }
+/* TESTIMONIAL */
 
-            .hero h1 {
-                font-size: 32px;
-            }
+.testimonials{
+    background:#f0f9ff;
+}
 
-            .buttons a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-    </style>
+.quote{
+    font-size:18px;
+    line-height:1.7;
+    color:#555;
+}
+
+/* APPOINTMENT */
+
+.appointment{
+    background:linear-gradient(
+        120deg,#075b83,#078f91);
+    color:white;
+}
+
+.form{
+    max-width:750px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+}
+
+.form input,
+.form select,
+.form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:25px;
+    background:#087f8c;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    background:#062d40;
+    color:white;
+    padding:50px 7%;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+footer h3{
+    margin-bottom:15px;
+    color:#8ff3df;
+}
+
+footer p{
+    color:#c9dce3;
+    line-height:1.7;
+}
+
+.copyright{
+    text-align:center;
+    margin-top:35px;
+    padding-top:20px;
+    border-top:1px solid #31566a;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        min-height:600px;
+        padding:60px 6%;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .stats{
+        flex-wrap:wrap;
+        gap:25px;
+    }
+
+    section{
+        padding:60px 6%;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
+<!-- NAVBAR -->
 
-        <div class="logo">
-            Shreyas <span>Mobile Shop</span>
-        </div>
+<header>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#products">Mobiles</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<div class="logo">
+    🏥 Vishrutha<span>Hospital</span>
+</div>
 
-    </header>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#departments">Departments</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#branches">Branches</a>
+    <a href="#appointment">Appointment</a>
+</nav>
 
+</header>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
 
-        <div class="hero-text">
+<!-- HERO -->
 
-            <h1>
-                Welcome to
-                <span>Shreyas Mobile Shop</span>
-            </h1>
+<section class="hero" id="home">
 
-            <p>
-                Your trusted destination for the latest smartphones,
-                mobile accessories and great deals.
-            </p>
+<div class="hero-content">
 
-            <div class="buttons">
+<h1>
+    Your Health.<br>
+    Our <span>Priority.</span>
+</h1>
 
-                <a href="tel:8088285367" class="call-btn">
-                    📞 Call Now
-                </a>
+<p>
+    Welcome to Vishrutha Hospital — providing
+    compassionate healthcare, advanced medical
+    technology and expert treatment for every family.
+</p>
 
-                <a href="https://wa.me/918088285367"
-                   class="whatsapp-btn"
-                   target="_blank">
-                    💬 WhatsApp
-                </a>
+<a href="#appointment" class="btn primary">
+    Book Appointment
+</a>
 
-            </div>
+<a href="tel:+918088285367" class="btn secondary">
+    📞 Emergency Call
+</a>
 
-        </div>
+</div>
 
-        <div class="phone-image">
-            📱
-        </div>
+</section>
 
-    </section>
 
+<!-- STATS -->
 
-    <!-- PRODUCTS -->
-    <section id="products">
+<div class="stats">
 
-        <div class="section-title">
+<div class="stat">
+<h2>25+</h2>
+<p>Years Experience</p>
+</div>
 
-            <h2>Popular Mobiles</h2>
+<div class="stat">
+<h2>100+</h2>
+<p>Medical Experts</p>
+</div>
 
-            <p>
-                Latest smartphones available at Shreyas Mobile Shop
-            </p>
+<div class="stat">
+<h2>50K+</h2>
+<p>Happy Patients</p>
+</div>
 
-        </div>
+<div class="stat">
+<h2>24/7</h2>
+<p>Emergency Care</p>
+</div>
 
+</div>
 
-        <div class="products">
 
-            <div class="product">
+<!-- DEPARTMENTS -->
 
-                <div class="mobile-icon">📱</div>
+<section id="departments">
 
-                <h3>Samsung</h3>
+<div class="section-title">
 
-                <p>Latest Samsung smartphones</p>
+<h2>Our Departments</h2>
 
-                <div class="price">
-                    Best Price
-                </div>
+<p>
+Advanced medical care under one roof
+</p>
 
-            </div>
+</div>
 
+<div class="cards">
 
-            <div class="product">
+<div class="card">
+<div class="icon">❤️</div>
+<h3>Cardiology</h3>
+<p>
+Comprehensive heart care with modern
+diagnostic and treatment facilities.
+</p>
+</div>
 
-                <div class="mobile-icon">📱</div>
+<div class="card">
+<div class="icon">🧠</div>
+<h3>Neurology</h3>
+<p>
+Specialized treatment for brain,
+spine and nervous system conditions.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🦴</div>
+<h3>Orthopaedics</h3>
+<p>
+Advanced bone, joint and sports injury care.
+</p>
+</div>
 
-                <h3>iPhone</h3>
+<div class="card">
+<div class="icon">👶</div>
+<h3>Paediatrics</h3>
+<p>
+Complete healthcare services for children.
+</p>
+</div>
 
-                <p>Latest Apple iPhones</p>
+<div class="card">
+<div class="icon">👩‍⚕️</div>
+<h3>Gynaecology</h3>
+<p>
+Comprehensive women's healthcare services.
+</p>
+</div>
 
-                <div class="price">
-                    Best Price
-                </div>
+<div class="card">
+<div class="icon">🩺</div>
+<h3>General Medicine</h3>
+<p>
+Expert diagnosis and treatment for
+common and complex conditions.
+</p>
+</div>
 
-            </div>
+</div>
 
+</section>
 
-            <div class="product">
 
-                <div class="mobile-icon">📱</div>
+<!-- WHY US -->
 
-                <h3>OnePlus</h3>
+<section class="why">
 
-                <p>Powerful OnePlus smartphones</p>
+<div class="section-title">
 
-                <div class="price">
-                    Best Price
-                </div>
+<h2>Why Choose Vishrutha?</h2>
 
-            </div>
+<p>
+Healthcare built around you and your family
+</p>
 
+</div>
 
-            <div class="product">
+<div class="why-box">
 
-                <div class="mobile-icon">📱</div>
+<div class="why-item">
+<h3>✓ Expert Doctors</h3>
+<p>
+Experienced medical professionals
+focused on patient care.
+</p>
+</div>
 
-                <h3>Oppo</h3>
+<div class="why-item">
+<h3>✓ Modern Technology</h3>
+<p>
+Advanced equipment supporting
+accurate diagnosis and treatment.
+</p>
+</div>
 
-                <p>Latest Oppo smartphones</p>
+<div class="why-item">
+<h3>✓ 24/7 Emergency</h3>
+<p>
+Emergency medical assistance whenever
+you need it.
+</p>
+</div>
 
-                <div class="price">
-                    Best Price
-                </div>
+<div class="why-item">
+<h3>✓ Patient First</h3>
+<p>
+We focus on safety, comfort and
+individualized care.
+</p>
+</div>
 
-            </div>
+</div>
 
-        </div>
+</section>
 
-    </section>
 
+<!-- BRANCHES -->
 
-    <!-- SERVICES -->
-    <section id="services">
+<section class="branches" id="branches">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <h2>Our Services</h2>
+<h2>Our Branches</h2>
 
-            <p>Everything you need for your mobile</p>
+<p>
+Expanding quality healthcare across major cities
+</p>
 
-        </div>
+</div>
 
+<div class="cards">
 
-        <div class="services">
+<div class="branch-card">
 
-            <div class="service">
+<h3>📍 Bengaluru</h3>
 
-                <div class="service-icon">📱</div>
+<p>
+Nelamangala / Bengaluru region
+</p>
 
-                <h3>Mobile Phones</h3>
+<p>
+<strong>24/7 Emergency Care</strong>
+</p>
 
-                <p>
-                    Latest smartphones from popular brands.
-                </p>
+<a href="#" class="branch-btn">
+View Branch
+</a>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="branch-card">
 
-                <div class="service-icon">🎧</div>
+<h3>📍 Chennai</h3>
 
-                <h3>Accessories</h3>
+<p>
+Vishrutha Hospital – Chennai
+</p>
 
-                <p>
-                    Chargers, earphones, cases, cables and more.
-                </p>
+<p>
+<strong>Multi-Speciality Care</strong>
+</p>
 
-            </div>
+<a href="#" class="branch-btn">
+View Branch
+</a>
 
+</div>
 
-            <div class="service">
 
-                <div class="service-icon">🔧</div>
+<div class="branch-card">
 
-                <h3>Mobile Service</h3>
+<h3>📍 Hyderabad</h3>
 
-                <p>
-                    Mobile repair and service support.
-                </p>
+<p>
+Vishrutha Hospital – Hyderabad
+</p>
 
-            </div>
+<p>
+<strong>Advanced Healthcare</strong>
+</p>
 
-        </div>
+<a href="#" class="branch-btn">
+View Branch
+</a>
 
-    </section>
+</div>
 
 
-    <!-- OFFER -->
-    <section>
+<div class="branch-card">
 
-        <div class="offer">
+<h3>📍 Mumbai</h3>
 
-            <h2>🔥 Special Offers</h2>
+<p>
+Vishrutha Hospital – Mumbai
+</p>
 
-            <p>
-                Get the latest smartphones and accessories
-                at attractive prices.
-            </p>
+<p>
+<strong>Speciality Healthcare</strong>
+</p>
 
-            <a href="https://wa.me/918088285367"
-               class="whatsapp-btn"
-               target="_blank"
-               style="display:inline-block;
-                      padding:14px 25px;
-                      border-radius:8px;
-                      text-decoration:none;
-                      font-weight:bold;">
-                Enquire on WhatsApp
-            </a>
+<a href="#" class="branch-btn">
+View Branch
+</a>
 
-        </div>
+</div>
 
-    </section>
 
+<div class="branch-card">
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
+<h3>📍 Delhi</h3>
 
-        <h2>Contact Shreyas Mobile Shop</h2>
+<p>
+Vishrutha Hospital – Delhi
+</p>
 
-        <p>📞 Phone:
-            <a href="tel:8088285367">
-                8088285367
-            </a>
-        </p>
+<p>
+<strong>Comprehensive Care</strong>
+</p>
 
-        <p>💬 WhatsApp:
-            <a href="https://wa.me/918088285367"
-               target="_blank">
-                Chat with us
-            </a>
-        </p>
+<a href="#" class="branch-btn">
+View Branch
+</a>
 
-        <p>📍 Visit our shop for the latest mobile phones.</p>
+</div>
 
-    </section>
 
+<div class="branch-card">
 
-    <!-- FOOTER -->
-    <footer>
+<h3>📍 Pune</h3>
 
-        © 2026 Shreyas Mobile Shop.
-        All Rights Reserved.
+<p>
+Vishrutha Hospital – Pune
+</p>
 
-    </footer>
+<p>
+<strong>Modern Medical Care</strong>
+</p>
 
+<a href="#" class="branch-btn">
+View Branch
+</a>
 
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/918088285367"
-       class="whatsapp-float"
-       target="_blank">
-        💬
-    </a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DOCTORS -->
+
+<section id="doctors">
+
+<div class="section-title">
+
+<h2>Our Medical Experts</h2>
+
+<p>
+Experienced professionals dedicated to your health
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card doctor">
+
+<div class="doctor-img">
+👨‍⚕️
+</div>
+
+<h3>Dr. Rajesh Kumar</h3>
+
+<p>Senior Cardiologist</p>
+
+</div>
+
+
+<div class="card doctor">
+
+<div class="doctor-img">
+👩‍⚕️
+</div>
+
+<h3>Dr. Priya Sharma</h3>
+
+<p>Senior Gynaecologist</p>
+
+</div>
+
+
+<div class="card doctor">
+
+<div class="doctor-img">
+👨‍⚕️
+</div>
+
+<h3>Dr. Arun Kumar</h3>
+
+<p>Orthopaedic Specialist</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+<div class="section-title">
+
+<h2>Our Patients, Our Pride</h2>
+
+<p>
+What our patients say about us
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+
+<p class="quote">
+"Very caring doctors and helpful staff.
+The entire experience was comfortable."
+</p>
+
+<strong>— Patient, Bengaluru</strong>
+
+</div>
+
+
+<div class="card">
+
+<h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+
+<p class="quote">
+"Clean hospital, professional doctors
+and excellent patient support."
+</p>
+
+<strong>— Patient, Bengaluru</strong>
+
+</div>
+
+
+<div class="card">
+
+<h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
+
+<p class="quote">
+"The doctors explained everything clearly
+and treated us with great care."
+</p>
+
+<strong>— Patient</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- APPOINTMENT -->
+
+<section class="appointment" id="appointment">
+
+<div class="section-title">
+
+<h2>Book an Appointment</h2>
+
+<p>
+Take the first step towards better healthcare.
+</p>
+
+</div>
+
+<div class="form">
+
+<input type="text"
+placeholder="Your Full Name">
+
+<input type="tel"
+placeholder="Mobile Number">
+
+<select>
+
+<option>Select Department</option>
+
+<option>Cardiology</option>
+<option>Neurology</option>
+<option>Orthopaedics</option>
+<option>Paediatrics</option>
+<option>Gynaecology</option>
+<option>General Medicine</option>
+
+</select>
+
+<input type="date">
+
+<textarea
+rows="4"
+placeholder="Message / Health Concern">
+</textarea>
+
+<button onclick="bookAppointment()">
+Request Appointment
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3>Vishrutha Hospital</h3>
+
+<p>
+Compassionate healthcare.
+Advanced technology.
+Better outcomes.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Quick Links</h3>
+
+<p>Home</p>
+<p>Departments</p>
+<p>Doctors</p>
+<p>Branches</p>
+<p>Appointments</p>
+
+</div>
+
+
+<div>
+
+<h3>Contact</h3>
+
+<p>📞 8088285367</p>
+<p>📧 info@vishruthahospital.com</p>
+<p>📍 Bengaluru, Karnataka</p>
+
+</div>
+
+
+<div>
+
+<h3>Emergency</h3>
+
+<p>
+Available 24 hours a day,
+7 days a week.
+</p>
+
+<p>
+<strong>📞 8088285367</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Vishrutha Hospital. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<script>
+
+function bookAppointment(){
+
+alert(
+"Thank you for choosing Vishrutha Hospital. Your appointment request has been received."
+);
+
+}
+
+</script>
 
 </body>
 </html>
