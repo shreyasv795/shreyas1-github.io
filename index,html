@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shreyas Mobile Shop</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        /* HEADER */
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00d4ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, #111827, #2563eb);
+            color: white;
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00d4ff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 14px 25px;
+            margin-right: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .call-btn {
+            background: #00d4ff;
+            color: #111827;
+        }
+
+        .whatsapp-btn {
+            background: #22c55e;
+            color: white;
+        }
+
+        .phone-image {
+            font-size: 180px;
+        }
+
+        /* SECTION */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+        }
+
+        .product .mobile-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #2563eb;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* SERVICES */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service h3 {
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* OFFER */
+        .offer {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .offer h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .offer p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .contact a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #080d17;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #22c55e;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 5%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .phone-image {
+                font-size: 120px;
+                margin-top: 40px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .buttons a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            Shreyas <span>Mobile Shop</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Mobiles</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>
+                Welcome to
+                <span>Shreyas Mobile Shop</span>
+            </h1>
+
+            <p>
+                Your trusted destination for the latest smartphones,
+                mobile accessories and great deals.
+            </p>
+
+            <div class="buttons">
+
+                <a href="tel:8088285367" class="call-btn">
+                    📞 Call Now
+                </a>
+
+                <a href="https://wa.me/918088285367"
+                   class="whatsapp-btn"
+                   target="_blank">
+                    💬 WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="phone-image">
+            📱
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section id="products">
+
+        <div class="section-title">
+
+            <h2>Popular Mobiles</h2>
+
+            <p>
+                Latest smartphones available at Shreyas Mobile Shop
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+            <div class="product">
+
+                <div class="mobile-icon">📱</div>
+
+                <h3>Samsung</h3>
+
+                <p>Latest Samsung smartphones</p>
+
+                <div class="price">
+                    Best Price
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="mobile-icon">📱</div>
+
+                <h3>iPhone</h3>
+
+                <p>Latest Apple iPhones</p>
+
+                <div class="price">
+                    Best Price
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="mobile-icon">📱</div>
+
+                <h3>OnePlus</h3>
+
+                <p>Powerful OnePlus smartphones</p>
+
+                <div class="price">
+                    Best Price
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="mobile-icon">📱</div>
+
+                <h3>Oppo</h3>
+
+                <p>Latest Oppo smartphones</p>
+
+                <div class="price">
+                    Best Price
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+
+        <div class="section-title">
+
+            <h2>Our Services</h2>
+
+            <p>Everything you need for your mobile</p>
+
+        </div>
+
+
+        <div class="services">
+
+            <div class="service">
+
+                <div class="service-icon">📱</div>
+
+                <h3>Mobile Phones</h3>
+
+                <p>
+                    Latest smartphones from popular brands.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">🎧</div>
+
+                <h3>Accessories</h3>
+
+                <p>
+                    Chargers, earphones, cases, cables and more.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">🔧</div>
+
+                <h3>Mobile Service</h3>
+
+                <p>
+                    Mobile repair and service support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+    <section>
+
+        <div class="offer">
+
+            <h2>🔥 Special Offers</h2>
+
+            <p>
+                Get the latest smartphones and accessories
+                at attractive prices.
+            </p>
+
+            <a href="https://wa.me/918088285367"
+               class="whatsapp-btn"
+               target="_blank"
+               style="display:inline-block;
+                      padding:14px 25px;
+                      border-radius:8px;
+                      text-decoration:none;
+                      font-weight:bold;">
+                Enquire on WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2>Contact Shreyas Mobile Shop</h2>
+
+        <p>📞 Phone:
+            <a href="tel:8088285367">
+                8088285367
+            </a>
+        </p>
+
+        <p>💬 WhatsApp:
+            <a href="https://wa.me/918088285367"
+               target="_blank">
+                Chat with us
+            </a>
+        </p>
+
+        <p>📍 Visit our shop for the latest mobile phones.</p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 Shreyas Mobile Shop.
+        All Rights Reserved.
+
+    </footer>
+
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/918088285367"
+       class="whatsapp-float"
+       target="_blank">
+        💬
+    </a>
+
+</body>
+</html>
