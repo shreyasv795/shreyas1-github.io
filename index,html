@@ -4,981 +4,861 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vishrutha Hospital | Advanced Healthcare</title>
+<title>ICC Cricket World Cup 2027</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#f5fbff;
-    color:#123;
+html {
+    scroll-behavior: smooth;
 }
 
-/* NAVBAR */
-
-header{
-    background:white;
-    padding:18px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: #020b08;
+    overflow-x: hidden;
 }
 
-.logo{
-    font-size:27px;
-    font-weight:bold;
-    color:#087f8c;
-}
+/* =========================
+   HERO BACKGROUND
+========================= */
 
-.logo span{
-    color:#0756a3;
-}
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-nav a{
-    text-decoration:none;
-    margin-left:25px;
-    color:#123;
-    font-weight:600;
-}
-
-nav a:hover{
-    color:#087f8c;
-}
-
-/* HERO */
-
-.hero{
-    min-height:650px;
-    display:flex;
-    align-items:center;
-    padding:80px 7%;
     background:
-    linear-gradient(120deg,
-    rgba(3,72,112,.95),
-    rgba(0,145,155,.85));
-    color:white;
+        linear-gradient(
+            rgba(0, 20, 15, 0.45),
+            rgba(0, 5, 3, 0.92)
+        ),
+        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2200&q=90");
+
+    background-size: cover;
+    background-position: center;
 }
 
-.hero-content{
-    max-width:650px;
+/* Dark African atmosphere */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 180, 40, 0.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.65),
+            transparent,
+            rgba(0, 0, 0, 0.65)
+        );
 }
 
-.hero h1{
-    font-size:58px;
-    line-height:1.1;
-    margin-bottom:20px;
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(8px);
 }
 
-.hero h1 span{
-    color:#8ff3df;
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
-.hero p{
-    font-size:20px;
-    line-height:1.7;
-    margin-bottom:30px;
+.logo span {
+    color: #f6c343;
 }
 
-.btn{
-    display:inline-block;
-    padding:15px 28px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    margin-right:10px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
 }
 
-.primary{
-    background:white;
-    color:#075b83;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.secondary{
-    border:2px solid white;
-    color:white;
+nav a:hover {
+    color: #f6c343;
 }
 
-/* STATS */
+/* =========================
+   HERO CONTENT
+========================= */
 
-.stats{
-    display:flex;
-    justify-content:center;
-    gap:50px;
-    padding:35px;
-    background:white;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    padding: 120px 20px 60px;
 }
 
-.stat{
-    text-align:center;
+.small-title {
+    font-size: 18px;
+    letter-spacing: 6px;
+    color: #f6c343;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.stat h2{
-    color:#07868c;
-    font-size:32px;
+h1 {
+    font-size: clamp(55px, 9vw, 125px);
+    line-height: 0.88;
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 5px 20px rgba(0,0,0,0.7);
 }
 
-/* SECTION */
-
-section{
-    padding:80px 7%;
+h1 span {
+    color: #f6c343;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
+.subtitle {
+    margin-top: 28px;
+    font-size: 21px;
+    color: #e5e5e5;
 }
 
-.section-title h2{
-    font-size:38px;
-    color:#075b83;
+.hosts {
+    margin-top: 12px;
+    font-size: 17px;
+    color: #cfcfcf;
 }
 
-.section-title p{
-    margin-top:10px;
-    color:#666;
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
 }
 
-/* CARDS */
+.btn {
+    padding: 15px 30px;
+    border-radius: 50px;
 
-.cards{
-    display:grid;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #f6c343;
+    color: #07120d;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(246,195,67,0.35);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.6);
+    color: white;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #07120d;
+}
+
+/* =========================
+   FLOATING CRICKET BALL
+========================= */
+
+.ball {
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    right: 9%;
+    top: 30%;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #ff4d4d,
+            #a60000 65%,
+            #500000
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,50,50,0.4);
+
+    animation: floatBall 4s ease-in-out infinite;
+}
+
+.ball::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 90px;
+
+    background: white;
+
+    left: 35px;
+    top: -7px;
+
+    transform: rotate(35deg);
+
+    opacity: 0.8;
+}
+
+@keyframes floatBall {
+
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+}
+
+/* =========================
+   INFO SECTION
+========================= */
+
+.info {
+    padding: 90px 7%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #020b08,
+            #061a12
+        );
+
+    text-align: center;
+}
+
+.section-title {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #f6c343;
+}
+
+.section-text {
+    max-width: 700px;
+    margin: auto;
+    color: #aaa;
+    line-height: 1.7;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    margin-top: 50px;
+
+    display: grid;
     grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+        repeat(4, 1fr);
+
+    gap: 20px;
 }
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    transition:.3s;
+.card {
+    padding: 35px 20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.10),
+            rgba(255,255,255,0.03)
+        );
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.3s;
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 30px rgba(0,0,0,.15);
+.card:hover {
+    transform: translateY(-10px);
+
+    border-color: #f6c343;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.3);
 }
 
-.card .icon{
-    font-size:45px;
-    margin-bottom:15px;
+.card-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
 }
 
-.card h3{
-    color:#075b83;
-    margin-bottom:12px;
+.card h3 {
+    font-size: 27px;
+    color: #f6c343;
 }
 
-.card p{
-    color:#666;
-    line-height:1.6;
+.card p {
+    margin-top: 8px;
+    color: #aaa;
 }
 
-/* WHY US */
+/* =========================
+   HOST COUNTRIES
+========================= */
 
-.why{
-    background:#eaf8f8;
+.host-section {
+    padding: 90px 7%;
+
+    background: #020806;
+    text-align: center;
 }
 
-.why-box{
-    display:grid;
+.country-container {
+    margin-top: 45px;
+
+    display: grid;
     grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+        repeat(3, 1fr);
+
+    gap: 25px;
 }
 
-.why-item{
-    background:white;
-    padding:25px;
-    border-radius:15px;
+.country {
+    min-height: 240px;
+
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.75)
+        ),
+        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1000&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    transition: 0.3s;
 }
 
-.why-item h3{
-    color:#087f8c;
-    margin-bottom:10px;
+.country:hover {
+    transform: scale(1.03);
 }
 
-/* BRANCHES */
-
-.branches{
-    background:#063f59;
-    color:white;
+.flag {
+    font-size: 55px;
 }
 
-.branches .section-title h2{
-    color:white;
+.country h3 {
+    font-size: 30px;
+    margin-top: 12px;
 }
 
-.branch-card{
-    background:white;
-    color:#123;
-    padding:28px;
-    border-radius:18px;
-    transition:.3s;
+.country p {
+    color: #ccc;
+    margin-top: 5px;
 }
 
-.branch-card:hover{
-    transform:scale(1.03);
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #062017,
+            #020807
+        );
 }
 
-.branch-card h3{
-    color:#075b83;
-    font-size:24px;
-    margin-bottom:10px;
+.countdown h2 {
+    font-size: 45px;
 }
 
-.branch-card p{
-    color:#555;
-    line-height:1.6;
+.countdown h2 span {
+    color: #f6c343;
 }
 
-.branch-btn{
-    display:inline-block;
-    margin-top:15px;
-    background:#087f8c;
-    color:white;
-    padding:10px 18px;
-    border-radius:20px;
-    text-decoration:none;
+.timer {
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* DOCTORS */
+.time-box {
+    width: 130px;
 
-.doctor{
-    text-align:center;
+    padding: 25px 10px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.doctor-img{
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    background:#d9f3f5;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:45px;
-    margin:auto auto 15px;
+.time-box strong {
+    display: block;
+
+    font-size: 40px;
+
+    color: #f6c343;
 }
 
-/* TESTIMONIAL */
-
-.testimonials{
-    background:#f0f9ff;
+.time-box small {
+    color: #aaa;
 }
 
-.quote{
-    font-size:18px;
-    line-height:1.7;
-    color:#555;
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #010403;
+
+    color: #777;
 }
 
-/* APPOINTMENT */
-
-.appointment{
-    background:linear-gradient(
-        120deg,#075b83,#078f91);
-    color:white;
+footer strong {
+    color: #f6c343;
 }
 
-.form{
-    max-width:750px;
-    margin:auto;
-    background:white;
-    padding:35px;
-    border-radius:20px;
-}
+/* =========================
+   MOBILE
+========================= */
 
-.form input,
-.form select,
-.form textarea{
-    width:100%;
-    padding:15px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:8px;
-}
+@media (max-width: 900px) {
 
-.form button{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:25px;
-    background:#087f8c;
-    color:white;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-    background:#062d40;
-    color:white;
-    padding:50px 7%;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
-}
-
-footer h3{
-    margin-bottom:15px;
-    color:#8ff3df;
-}
-
-footer p{
-    color:#c9dce3;
-    line-height:1.7;
-}
-
-.copyright{
-    text-align:center;
-    margin-top:35px;
-    padding-top:20px;
-    border-top:1px solid #31566a;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    nav{
-        display:none;
+    nav ul {
+        display: none;
     }
 
-    .hero{
-        min-height:600px;
-        padding:60px 6%;
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .hero h1{
-        font-size:40px;
+    .country-container {
+        grid-template-columns:
+            1fr;
     }
 
-    .hero p{
-        font-size:17px;
-    }
-
-    .stats{
-        flex-wrap:wrap;
-        gap:25px;
-    }
-
-    section{
-        padding:60px 6%;
-    }
-
-    .section-title h2{
-        font-size:30px;
+    .ball {
+        display: none;
     }
 }
 
+@media (max-width: 600px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .countdown h2 {
+        font-size: 32px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
-<header>
-
-<div class="logo">
-    🏥 Vishrutha<span>Hospital</span>
-</div>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#departments">Departments</a>
-    <a href="#doctors">Doctors</a>
-    <a href="#branches">Branches</a>
-    <a href="#appointment">Appointment</a>
+
+    <div class="logo">
+        CWC <span>2027</span>
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Tournament</a></li>
+        <li><a href="#hosts">Hosts</a></li>
+        <li><a href="#countdown">Countdown</a></li>
+    </ul>
+
 </nav>
 
-</header>
 
-
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
-<div class="hero-content">
+    <div class="ball"></div>
 
-<h1>
-    Your Health.<br>
-    Our <span>Priority.</span>
-</h1>
+    <div class="hero-content">
 
-<p>
-    Welcome to Vishrutha Hospital — providing
-    compassionate healthcare, advanced medical
-    technology and expert treatment for every family.
-</p>
+        <div class="small-title">
+            ICC MEN'S CRICKET
+        </div>
 
-<a href="#appointment" class="btn primary">
-    Book Appointment
-</a>
+        <h1>
+            WORLD CUP<br>
+            <span>2027</span>
+        </h1>
 
-<a href="tel:+918088285367" class="btn secondary">
-    📞 Emergency Call
-</a>
+        <p class="subtitle">
+            The world comes together in Africa
+        </p>
 
-</div>
+        <p class="hosts">
+            🇿🇦 South Africa &nbsp; • &nbsp;
+            🇿🇼 Zimbabwe &nbsp; • &nbsp;
+            🇳🇦 Namibia
+        </p>
 
-</section>
+        <div class="buttons">
 
+            <a href="#about" class="btn btn-primary">
+                Explore Tournament
+            </a>
 
-<!-- STATS -->
+            <a href="#countdown" class="btn btn-outline">
+                Countdown
+            </a>
 
-<div class="stats">
+        </div>
 
-<div class="stat">
-<h2>25+</h2>
-<p>Years Experience</p>
-</div>
-
-<div class="stat">
-<h2>100+</h2>
-<p>Medical Experts</p>
-</div>
-
-<div class="stat">
-<h2>50K+</h2>
-<p>Happy Patients</p>
-</div>
-
-<div class="stat">
-<h2>24/7</h2>
-<p>Emergency Care</p>
-</div>
-
-</div>
-
-
-<!-- DEPARTMENTS -->
-
-<section id="departments">
-
-<div class="section-title">
-
-<h2>Our Departments</h2>
-
-<p>
-Advanced medical care under one roof
-</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-<div class="icon">❤️</div>
-<h3>Cardiology</h3>
-<p>
-Comprehensive heart care with modern
-diagnostic and treatment facilities.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🧠</div>
-<h3>Neurology</h3>
-<p>
-Specialized treatment for brain,
-spine and nervous system conditions.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🦴</div>
-<h3>Orthopaedics</h3>
-<p>
-Advanced bone, joint and sports injury care.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">👶</div>
-<h3>Paediatrics</h3>
-<p>
-Complete healthcare services for children.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">👩‍⚕️</div>
-<h3>Gynaecology</h3>
-<p>
-Comprehensive women's healthcare services.
-</p>
-</div>
-
-<div class="card">
-<div class="icon">🩺</div>
-<h3>General Medicine</h3>
-<p>
-Expert diagnosis and treatment for
-common and complex conditions.
-</p>
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- WHY US -->
+<!-- =========================
+     TOURNAMENT INFO
+========================= -->
 
-<section class="why">
+<section class="info" id="about">
 
-<div class="section-title">
+    <h2 class="section-title">
+        THE <span>BIGGEST</span> STAGE
+    </h2>
 
-<h2>Why Choose Vishrutha?</h2>
-
-<p>
-Healthcare built around you and your family
-</p>
-
-</div>
-
-<div class="why-box">
-
-<div class="why-item">
-<h3>✓ Expert Doctors</h3>
-<p>
-Experienced medical professionals
-focused on patient care.
-</p>
-</div>
-
-<div class="why-item">
-<h3>✓ Modern Technology</h3>
-<p>
-Advanced equipment supporting
-accurate diagnosis and treatment.
-</p>
-</div>
-
-<div class="why-item">
-<h3>✓ 24/7 Emergency</h3>
-<p>
-Emergency medical assistance whenever
-you need it.
-</p>
-</div>
-
-<div class="why-item">
-<h3>✓ Patient First</h3>
-<p>
-We focus on safety, comfort and
-individualized care.
-</p>
-</div>
-
-</div>
-
-</section>
+    <p class="section-text">
+        The ICC Men's Cricket World Cup 2027 will bring
+        the world's best cricket teams together across
+        Africa for one of the biggest sporting events
+        on the planet.
+    </p>
 
 
-<!-- BRANCHES -->
+    <div class="cards">
 
-<section class="branches" id="branches">
+        <div class="card">
 
-<div class="section-title">
+            <div class="card-icon">🏆</div>
 
-<h2>Our Branches</h2>
+            <h3>2027</h3>
 
-<p>
-Expanding quality healthcare across major cities
-</p>
+            <p>World Cup Year</p>
 
-</div>
-
-<div class="cards">
-
-<div class="branch-card">
-
-<h3>📍 Bengaluru</h3>
-
-<p>
-Nelamangala / Bengaluru region
-</p>
-
-<p>
-<strong>24/7 Emergency Care</strong>
-</p>
-
-<a href="#" class="branch-btn">
-View Branch
-</a>
-
-</div>
+        </div>
 
 
-<div class="branch-card">
+        <div class="card">
 
-<h3>📍 Chennai</h3>
+            <div class="card-icon">🏏</div>
 
-<p>
-Vishrutha Hospital – Chennai
-</p>
+            <h3>14</h3>
 
-<p>
-<strong>Multi-Speciality Care</strong>
-</p>
+            <p>Teams</p>
 
-<a href="#" class="branch-btn">
-View Branch
-</a>
-
-</div>
+        </div>
 
 
-<div class="branch-card">
+        <div class="card">
 
-<h3>📍 Hyderabad</h3>
+            <div class="card-icon">🎯</div>
 
-<p>
-Vishrutha Hospital – Hyderabad
-</p>
+            <h3>57</h3>
 
-<p>
-<strong>Advanced Healthcare</strong>
-</p>
+            <p>Matches</p>
 
-<a href="#" class="branch-btn">
-View Branch
-</a>
-
-</div>
+        </div>
 
 
-<div class="branch-card">
+        <div class="card">
 
-<h3>📍 Mumbai</h3>
+            <div class="card-icon">🏟️</div>
 
-<p>
-Vishrutha Hospital – Mumbai
-</p>
+            <h3>12</h3>
 
-<p>
-<strong>Speciality Healthcare</strong>
-</p>
+            <p>Venues</p>
 
-<a href="#" class="branch-btn">
-View Branch
-</a>
+        </div>
 
-</div>
-
-
-<div class="branch-card">
-
-<h3>📍 Delhi</h3>
-
-<p>
-Vishrutha Hospital – Delhi
-</p>
-
-<p>
-<strong>Comprehensive Care</strong>
-</p>
-
-<a href="#" class="branch-btn">
-View Branch
-</a>
-
-</div>
-
-
-<div class="branch-card">
-
-<h3>📍 Pune</h3>
-
-<p>
-Vishrutha Hospital – Pune
-</p>
-
-<p>
-<strong>Modern Medical Care</strong>
-</p>
-
-<a href="#" class="branch-btn">
-View Branch
-</a>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- DOCTORS -->
+<!-- =========================
+     HOST COUNTRIES
+========================= -->
 
-<section id="doctors">
+<section class="host-section" id="hosts">
 
-<div class="section-title">
+    <h2 class="section-title">
+        HOST <span>NATIONS</span>
+    </h2>
 
-<h2>Our Medical Experts</h2>
-
-<p>
-Experienced professionals dedicated to your health
-</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card doctor">
-
-<div class="doctor-img">
-👨‍⚕️
-</div>
-
-<h3>Dr. Rajesh Kumar</h3>
-
-<p>Senior Cardiologist</p>
-
-</div>
+    <p class="section-text">
+        Three African nations will host the 2027
+        Cricket World Cup.
+    </p>
 
 
-<div class="card doctor">
+    <div class="country-container">
 
-<div class="doctor-img">
-👩‍⚕️
-</div>
+        <div class="country">
 
-<h3>Dr. Priya Sharma</h3>
+            <div class="flag">🇿🇦</div>
 
-<p>Senior Gynaecologist</p>
+            <h3>South Africa</h3>
 
-</div>
+            <p>Main Host</p>
+
+        </div>
 
 
-<div class="card doctor">
+        <div class="country">
 
-<div class="doctor-img">
-👨‍⚕️
-</div>
+            <div class="flag">🇿🇼</div>
 
-<h3>Dr. Arun Kumar</h3>
+            <h3>Zimbabwe</h3>
 
-<p>Orthopaedic Specialist</p>
+            <p>Co-host</p>
 
-</div>
+        </div>
 
-</div>
+
+        <div class="country">
+
+            <div class="flag">🇳🇦</div>
+
+            <h3>Namibia</h3>
+
+            <p>Co-host</p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- TESTIMONIALS -->
+<!-- =========================
+     COUNTDOWN
+========================= -->
 
-<section class="testimonials">
+<section class="countdown" id="countdown">
 
-<div class="section-title">
+    <h2>
+        COUNTDOWN TO <span>2027</span>
+    </h2>
 
-<h2>Our Patients, Our Pride</h2>
+    <div class="timer">
 
-<p>
-What our patients say about us
-</p>
+        <div class="time-box">
+            <strong id="days">00</strong>
+            <small>DAYS</small>
+        </div>
 
-</div>
+        <div class="time-box">
+            <strong id="hours">00</strong>
+            <small>HOURS</small>
+        </div>
 
-<div class="cards">
+        <div class="time-box">
+            <strong id="minutes">00</strong>
+            <small>MINUTES</small>
+        </div>
 
-<div class="card">
+        <div class="time-box">
+            <strong id="seconds">00</strong>
+            <small>SECONDS</small>
+        </div>
 
-<h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
-
-<p class="quote">
-"Very caring doctors and helpful staff.
-The entire experience was comfortable."
-</p>
-
-<strong>— Patient, Bengaluru</strong>
-
-</div>
-
-
-<div class="card">
-
-<h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
-
-<p class="quote">
-"Clean hospital, professional doctors
-and excellent patient support."
-</p>
-
-<strong>— Patient, Bengaluru</strong>
-
-</div>
-
-
-<div class="card">
-
-<h3>⭐ ⭐ ⭐ ⭐ ⭐</h3>
-
-<p class="quote">
-"The doctors explained everything clearly
-and treated us with great care."
-</p>
-
-<strong>— Patient</strong>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- APPOINTMENT -->
-
-<section class="appointment" id="appointment">
-
-<div class="section-title">
-
-<h2>Book an Appointment</h2>
-
-<p>
-Take the first step towards better healthcare.
-</p>
-
-</div>
-
-<div class="form">
-
-<input type="text"
-placeholder="Your Full Name">
-
-<input type="tel"
-placeholder="Mobile Number">
-
-<select>
-
-<option>Select Department</option>
-
-<option>Cardiology</option>
-<option>Neurology</option>
-<option>Orthopaedics</option>
-<option>Paediatrics</option>
-<option>Gynaecology</option>
-<option>General Medicine</option>
-
-</select>
-
-<input type="date">
-
-<textarea
-rows="4"
-placeholder="Message / Health Concern">
-</textarea>
-
-<button onclick="bookAppointment()">
-Request Appointment
-</button>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<div class="footer-grid">
+    <p>
+        Designed for <strong>ICC Cricket World Cup 2027</strong>
+    </p>
 
-<div>
-
-<h3>Vishrutha Hospital</h3>
-
-<p>
-Compassionate healthcare.
-Advanced technology.
-Better outcomes.
-</p>
-
-</div>
-
-
-<div>
-
-<h3>Quick Links</h3>
-
-<p>Home</p>
-<p>Departments</p>
-<p>Doctors</p>
-<p>Branches</p>
-<p>Appointments</p>
-
-</div>
-
-
-<div>
-
-<h3>Contact</h3>
-
-<p>📞 8088285367</p>
-<p>📧 info@vishruthahospital.com</p>
-<p>📍 Bengaluru, Karnataka</p>
-
-</div>
-
-
-<div>
-
-<h3>Emergency</h3>
-
-<p>
-Available 24 hours a day,
-7 days a week.
-</p>
-
-<p>
-<strong>📞 8088285367</strong>
-</p>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-© 2026 Vishrutha Hospital. All Rights Reserved.
-
-</div>
+    <p style="margin-top:8px;">
+        South Africa • Zimbabwe • Namibia
+    </p>
 
 </footer>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-function bookAppointment(){
+const targetDate =
+    new Date("2027-10-01T00:00:00").getTime();
 
-alert(
-"Thank you for choosing Vishrutha Hospital. Your appointment request has been received."
-);
+function updateCountdown() {
 
+    const now = new Date().getTime();
+
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+
+        return;
+    }
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+    const hours =
+        Math.floor(
+            (difference /
+            (1000 * 60 * 60)) % 24
+        );
+
+    const minutes =
+        Math.floor(
+            (difference /
+            (1000 * 60)) % 60
+        );
+
+    const seconds =
+        Math.floor(
+            (difference / 1000) % 60
+        );
+
+    document.getElementById("days")
+        .innerText = days;
+
+    document.getElementById("hours")
+        .innerText =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes")
+        .innerText =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds")
+        .innerText =
+        String(seconds).padStart(2, "0");
 }
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
 
 </script>
 
