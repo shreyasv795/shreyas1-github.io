@@ -4,863 +4,527 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ICC Cricket World Cup 2027</title>
+<title>Best Teacher Award | Anjinamma P</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background: #020b08;
-    overflow-x: hidden;
-}
-
-/* =========================
-   HERO BACKGROUND
-========================= */
-
-.hero {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
+body{
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
     background:
-        linear-gradient(
-            rgba(0, 20, 15, 0.45),
-            rgba(0, 5, 3, 0.92)
-        ),
-        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2200&q=90");
-
-    background-size: cover;
-    background-position: center;
+        radial-gradient(circle at 50% 20%, #513b08 0%, #181205 30%, #050505 75%);
+    color:white;
+    overflow-x:hidden;
 }
 
-/* Dark African atmosphere */
+/* GOLD PARTICLES */
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(255, 180, 40, 0.20),
-            transparent 30%
-        ),
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.65),
-            transparent,
-            rgba(0, 0, 0, 0.65)
-        );
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 25px 7%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    z-index: 10;
-
-    background: rgba(0, 0, 0, 0.18);
-    backdrop-filter: blur(8px);
+.particles span{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#ffd76a;
+    border-radius:50%;
+    box-shadow:0 0 12px #ffd76a;
+    animation:float 6s infinite ease-in-out;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
+.particles span:nth-child(1){left:8%;top:20%;animation-delay:0s}
+.particles span:nth-child(2){left:20%;top:70%;animation-delay:1s}
+.particles span:nth-child(3){left:32%;top:15%;animation-delay:2s}
+.particles span:nth-child(4){left:45%;top:80%;animation-delay:3s}
+.particles span:nth-child(5){left:60%;top:25%;animation-delay:1s}
+.particles span:nth-child(6){left:72%;top:65%;animation-delay:2s}
+.particles span:nth-child(7){left:85%;top:18%;animation-delay:4s}
+.particles span:nth-child(8){left:94%;top:75%;animation-delay:2s}
 
-.logo span {
-    color: #f6c343;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 35px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #f6c343;
-}
-
-/* =========================
-   HERO CONTENT
-========================= */
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1000px;
-    padding: 120px 20px 60px;
-}
-
-.small-title {
-    font-size: 18px;
-    letter-spacing: 6px;
-    color: #f6c343;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: clamp(55px, 9vw, 125px);
-    line-height: 0.88;
-    font-weight: 900;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0 5px 20px rgba(0,0,0,0.7);
-}
-
-h1 span {
-    color: #f6c343;
-}
-
-.subtitle {
-    margin-top: 28px;
-    font-size: 21px;
-    color: #e5e5e5;
-}
-
-.hosts {
-    margin-top: 12px;
-    font-size: 17px;
-    color: #cfcfcf;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.buttons {
-    margin-top: 40px;
-
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 15px 30px;
-    border-radius: 50px;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background: #f6c343;
-    color: #07120d;
-}
-
-.btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(246,195,67,0.35);
-}
-
-.btn-outline {
-    border: 1px solid rgba(255,255,255,0.6);
-    color: white;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-}
-
-.btn-outline:hover {
-    background: white;
-    color: #07120d;
-}
-
-/* =========================
-   FLOATING CRICKET BALL
-========================= */
-
-.ball {
-    position: absolute;
-
-    width: 75px;
-    height: 75px;
-
-    border-radius: 50%;
-
-    right: 9%;
-    top: 30%;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #ff4d4d,
-            #a60000 65%,
-            #500000
-        );
-
-    box-shadow:
-        0 0 35px rgba(255,50,50,0.4);
-
-    animation: floatBall 4s ease-in-out infinite;
-}
-
-.ball::after {
-    content: "";
-
-    position: absolute;
-
-    width: 5px;
-    height: 90px;
-
-    background: white;
-
-    left: 35px;
-    top: -7px;
-
-    transform: rotate(35deg);
-
-    opacity: 0.8;
-}
-
-@keyframes floatBall {
-
-    0%,100% {
-        transform: translateY(0) rotate(0);
+@keyframes float{
+    0%,100%{
+        transform:translateY(0) scale(1);
+        opacity:.4;
     }
-
-    50% {
-        transform: translateY(-30px) rotate(180deg);
+    50%{
+        transform:translateY(-40px) scale(1.7);
+        opacity:1;
     }
 }
 
-/* =========================
-   INFO SECTION
-========================= */
+/* MAIN */
 
-.info {
-    padding: 90px 7%;
-
-    background:
-        linear-gradient(
-            180deg,
-            #020b08,
-            #061a12
-        );
-
-    text-align: center;
+.container{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px 20px;
 }
 
-.section-title {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
+/* AWARD CARD */
 
-.section-title span {
-    color: #f6c343;
-}
-
-.section-text {
-    max-width: 700px;
-    margin: auto;
-    color: #aaa;
-    line-height: 1.7;
-}
-
-/* =========================
-   CARDS
-========================= */
-
-.cards {
-    margin-top: 50px;
-
-    display: grid;
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.card {
-    padding: 35px 20px;
-
-    border-radius: 20px;
+.award-card{
+    width:min(1050px,95%);
+    min-height:680px;
+    position:relative;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,0.10),
-            rgba(255,255,255,0.03)
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.025)
         );
 
-    border: 1px solid rgba(255,255,255,0.1);
+    border:1px solid rgba(255,215,100,.55);
+    border-radius:35px;
 
-    backdrop-filter: blur(12px);
-
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-
-    border-color: #f6c343;
+    backdrop-filter:blur(18px);
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,0.3);
+        0 0 30px rgba(255,193,7,.12),
+        0 30px 100px rgba(0,0,0,.8);
+
+    text-align:center;
+    padding:55px 30px;
+    overflow:hidden;
+
+    animation:appear 1.2s ease;
 }
 
-.card-icon {
-    font-size: 38px;
-    margin-bottom: 15px;
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
 }
 
-.card h3 {
-    font-size: 27px;
-    color: #f6c343;
+/* GOLD BORDER */
+
+.award-card::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(255,215,100,.25);
+    border-radius:25px;
+    pointer-events:none;
 }
 
-.card p {
-    margin-top: 8px;
-    color: #aaa;
+/* TOP */
+
+.small-title{
+    color:#f7d477;
+    font-size:15px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    font-weight:600;
 }
 
-/* =========================
-   HOST COUNTRIES
-========================= */
-
-.host-section {
-    padding: 90px 7%;
-
-    background: #020806;
-    text-align: center;
+.school{
+    margin-top:12px;
+    font-family:'Cinzel',serif;
+    font-size:24px;
+    font-weight:700;
+    color:#fff5d0;
 }
 
-.country-container {
-    margin-top: 45px;
+/* TROPHY */
 
-    display: grid;
-    grid-template-columns:
-        repeat(3, 1fr);
+.trophy{
+    margin:35px auto 20px;
+    width:120px;
+    height:120px;
 
-    gap: 25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:70px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,#ffe89b,#c99118 65%,#6b4700);
+
+    box-shadow:
+        0 0 25px #e9b83f,
+        0 0 70px rgba(255,196,55,.35);
+
+    animation:trophyGlow 2.5s infinite alternate;
 }
 
-.country {
-    min-height: 240px;
+@keyframes trophyGlow{
+    from{
+        transform:scale(1);
+        box-shadow:0 0 20px #e9b83f;
+    }
+    to{
+        transform:scale(1.06);
+        box-shadow:
+            0 0 35px #ffd86b,
+            0 0 90px rgba(255,193,7,.4);
+    }
+}
 
-    border-radius: 25px;
+/* HEADING */
 
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
+.award-title{
+    font-family:'Cinzel',serif;
+    font-size:clamp(42px,7vw,78px);
+    line-height:1.05;
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.75)
-        ),
-        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1000&q=80");
-
-    background-size: cover;
-    background-position: center;
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    transition: 0.3s;
-}
-
-.country:hover {
-    transform: scale(1.03);
-}
-
-.flag {
-    font-size: 55px;
-}
-
-.country h3 {
-    font-size: 30px;
-    margin-top: 12px;
-}
-
-.country p {
-    color: #ccc;
-    margin-top: 5px;
-}
-
-/* =========================
-   COUNTDOWN
-========================= */
-
-.countdown {
-    padding: 90px 20px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #062017,
-            #020807
+            90deg,
+            #fff1a8,
+            #dca92e,
+            #fff5b9,
+            #c68d16
         );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    text-shadow:
+        0 0 30px rgba(255,203,74,.15);
+
+    margin-top:20px;
 }
 
-.countdown h2 {
-    font-size: 45px;
+.subtitle{
+    margin-top:14px;
+    font-size:18px;
+    letter-spacing:4px;
+    color:#ddd;
+    text-transform:uppercase;
 }
 
-.countdown h2 span {
-    color: #f6c343;
+/* TEACHER */
+
+.teacher{
+    margin-top:35px;
 }
 
-.timer {
-    margin-top: 40px;
-
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.teacher-label{
+    font-size:14px;
+    letter-spacing:5px;
+    color:#cda641;
+    text-transform:uppercase;
 }
 
-.time-box {
-    width: 130px;
+.teacher-name{
+    margin-top:8px;
 
-    padding: 25px 10px;
+    font-family:'Cinzel',serif;
+    font-size:clamp(34px,6vw,58px);
 
-    border-radius: 18px;
+    color:#ffffff;
 
-    background: rgba(255,255,255,0.06);
+    font-weight:700;
 
-    border: 1px solid rgba(255,255,255,0.1);
+    text-shadow:
+        0 0 25px rgba(255,215,100,.25);
 }
 
-.time-box strong {
-    display: block;
+/* MESSAGE */
 
-    font-size: 40px;
+.message{
+    max-width:700px;
+    margin:20px auto;
 
-    color: #f6c343;
+    font-size:16px;
+    line-height:1.8;
+    color:#d7d7d7;
 }
 
-.time-box small {
-    color: #aaa;
+/* DIVIDER */
+
+.divider{
+    width:180px;
+    height:2px;
+    margin:25px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e6b63c,
+            transparent
+        );
+
+    box-shadow:0 0 15px #e6b63c;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
-footer {
-    padding: 30px;
-
-    text-align: center;
-
-    background: #010403;
-
-    color: #777;
+.footer{
+    margin-top:30px;
 }
 
-footer strong {
-    color: #f6c343;
+.presented{
+    font-size:13px;
+    letter-spacing:3px;
+    color:#aaa;
+    text-transform:uppercase;
 }
 
-/* =========================
-   MOBILE
-========================= */
+.school-name{
+    margin-top:8px;
+    font-family:'Cinzel',serif;
+    font-size:22px;
+    color:#f1d77d;
+    font-weight:600;
+}
 
-@media (max-width: 900px) {
+.location{
+    margin-top:6px;
+    color:#999;
+    font-size:14px;
+}
 
-    nav ul {
-        display: none;
+/* CORNER DECORATIONS */
+
+.corner{
+    position:absolute;
+    width:80px;
+    height:80px;
+    border-color:#d8aa3a;
+    border-style:solid;
+}
+
+.corner.top-left{
+    top:25px;
+    left:25px;
+    border-width:2px 0 0 2px;
+}
+
+.corner.top-right{
+    top:25px;
+    right:25px;
+    border-width:2px 2px 0 0;
+}
+
+.corner.bottom-left{
+    bottom:25px;
+    left:25px;
+    border-width:0 0 2px 2px;
+}
+
+.corner.bottom-right{
+    bottom:25px;
+    right:25px;
+    border-width:0 2px 2px 0;
+}
+
+/* BUTTON */
+
+.btn{
+    margin-top:28px;
+    display:inline-block;
+
+    padding:13px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#211600;
+
+    font-weight:700;
+
+    background:
+        linear-gradient(
+            90deg,
+            #dca92e,
+            #ffe28a,
+            #dca92e
+        );
+
+    box-shadow:
+        0 0 20px rgba(255,207,82,.25);
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 0 35px rgba(255,207,82,.55);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .award-card{
+        padding:45px 18px;
+        min-height:auto;
     }
 
-    .cards {
-        grid-template-columns:
-            repeat(2, 1fr);
+    .small-title{
+        font-size:11px;
+        letter-spacing:3px;
     }
 
-    .country-container {
-        grid-template-columns:
-            1fr;
+    .school{
+        font-size:17px;
     }
 
-    .ball {
-        display: none;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .cards {
-        grid-template-columns: 1fr;
+    .trophy{
+        width:95px;
+        height:95px;
+        font-size:55px;
     }
 
-    h1 {
-        font-size: 55px;
+    .subtitle{
+        font-size:12px;
+        letter-spacing:2px;
     }
 
-    .subtitle {
-        font-size: 17px;
+    .message{
+        font-size:14px;
     }
 
-    .section-title {
-        font-size: 32px;
-    }
-
-    .countdown h2 {
-        font-size: 32px;
+    .corner{
+        width:45px;
+        height:45px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- GOLD PARTICLES -->
 
-<nav>
-
-    <div class="logo">
-        CWC <span>2027</span>
-    </div>
-
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Tournament</a></li>
-        <li><a href="#hosts">Hosts</a></li>
-        <li><a href="#countdown">Countdown</a></li>
-    </ul>
-
-</nav>
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<div class="container">
 
-<section class="hero" id="home">
+    <div class="award-card">
 
-    <div class="ball"></div>
+        <!-- CORNERS -->
 
-    <div class="hero-content">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+
+        <!-- SCHOOL -->
 
         <div class="small-title">
-            ICC MEN'S CRICKET
+            Gandhi Vidya Shala
         </div>
 
-        <h1>
-            WORLD CUP<br>
-            <span>2027</span>
+        <div class="school">
+            Bengaluru
+        </div>
+
+
+        <!-- TROPHY -->
+
+        <div class="trophy">
+            🏆
+        </div>
+
+
+        <!-- AWARD -->
+
+        <h1 class="award-title">
+            Best Teacher Award
         </h1>
 
-        <p class="subtitle">
-            The world comes together in Africa
+        <div class="subtitle">
+            Excellence • Dedication • Inspiration
+        </div>
+
+
+        <!-- TEACHER -->
+
+        <div class="teacher">
+
+            <div class="teacher-label">
+                Proudly Presented To
+            </div>
+
+            <div class="teacher-name">
+                Anjinamma P
+            </div>
+
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <!-- MESSAGE -->
+
+        <p class="message">
+            In recognition of outstanding dedication, inspiring teaching,
+            unwavering commitment and the positive impact made on the lives
+            of students through knowledge, guidance and compassion.
         </p>
 
-        <p class="hosts">
-            🇿🇦 South Africa &nbsp; • &nbsp;
-            🇿🇼 Zimbabwe &nbsp; • &nbsp;
-            🇳🇦 Namibia
-        </p>
 
-        <div class="buttons">
+        <!-- FOOTER -->
 
-            <a href="#about" class="btn btn-primary">
-                Explore Tournament
-            </a>
+        <div class="footer">
 
-            <a href="#countdown" class="btn btn-outline">
-                Countdown
-            </a>
+            <div class="presented">
+                With Gratitude & Appreciation
+            </div>
+
+            <div class="school-name">
+                Gandhi Vidya Shala
+            </div>
+
+            <div class="location">
+                Bengaluru, Karnataka
+            </div>
 
         </div>
+
+
+        <a href="#" class="btn">
+            ✦ A Teacher Who Inspires ✦
+        </a>
 
     </div>
 
-</section>
-
-
-<!-- =========================
-     TOURNAMENT INFO
-========================= -->
-
-<section class="info" id="about">
-
-    <h2 class="section-title">
-        THE <span>BIGGEST</span> STAGE
-    </h2>
-
-    <p class="section-text">
-        The ICC Men's Cricket World Cup 2027 will bring
-        the world's best cricket teams together across
-        Africa for one of the biggest sporting events
-        on the planet.
-    </p>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="card-icon">🏆</div>
-
-            <h3>2027</h3>
-
-            <p>World Cup Year</p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🏏</div>
-
-            <h3>14</h3>
-
-            <p>Teams</p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🎯</div>
-
-            <h3>57</h3>
-
-            <p>Matches</p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🏟️</div>
-
-            <h3>12</h3>
-
-            <p>Venues</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     HOST COUNTRIES
-========================= -->
-
-<section class="host-section" id="hosts">
-
-    <h2 class="section-title">
-        HOST <span>NATIONS</span>
-    </h2>
-
-    <p class="section-text">
-        Three African nations will host the 2027
-        Cricket World Cup.
-    </p>
-
-
-    <div class="country-container">
-
-        <div class="country">
-
-            <div class="flag">🇿🇦</div>
-
-            <h3>South Africa</h3>
-
-            <p>Main Host</p>
-
-        </div>
-
-
-        <div class="country">
-
-            <div class="flag">🇿🇼</div>
-
-            <h3>Zimbabwe</h3>
-
-            <p>Co-host</p>
-
-        </div>
-
-
-        <div class="country">
-
-            <div class="flag">🇳🇦</div>
-
-            <h3>Namibia</h3>
-
-            <p>Co-host</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     COUNTDOWN
-========================= -->
-
-<section class="countdown" id="countdown">
-
-    <h2>
-        COUNTDOWN TO <span>2027</span>
-    </h2>
-
-    <div class="timer">
-
-        <div class="time-box">
-            <strong id="days">00</strong>
-            <small>DAYS</small>
-        </div>
-
-        <div class="time-box">
-            <strong id="hours">00</strong>
-            <small>HOURS</small>
-        </div>
-
-        <div class="time-box">
-            <strong id="minutes">00</strong>
-            <small>MINUTES</small>
-        </div>
-
-        <div class="time-box">
-            <strong id="seconds">00</strong>
-            <small>SECONDS</small>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        Designed for <strong>ICC Cricket World Cup 2027</strong>
-    </p>
-
-    <p style="margin-top:8px;">
-        South Africa • Zimbabwe • Namibia
-    </p>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-const targetDate =
-    new Date("2027-10-01T00:00:00").getTime();
-
-function updateCountdown() {
-
-    const now = new Date().getTime();
-
-    const difference = targetDate - now;
-
-    if (difference <= 0) {
-
-        document.getElementById("days").innerText = "00";
-        document.getElementById("hours").innerText = "00";
-        document.getElementById("minutes").innerText = "00";
-        document.getElementById("seconds").innerText = "00";
-
-        return;
-    }
-
-    const days =
-        Math.floor(
-            difference /
-            (1000 * 60 * 60 * 24)
-        );
-
-    const hours =
-        Math.floor(
-            (difference /
-            (1000 * 60 * 60)) % 24
-        );
-
-    const minutes =
-        Math.floor(
-            (difference /
-            (1000 * 60)) % 60
-        );
-
-    const seconds =
-        Math.floor(
-            (difference / 1000) % 60
-        );
-
-    document.getElementById("days")
-        .innerText = days;
-
-    document.getElementById("hours")
-        .innerText =
-        String(hours).padStart(2, "0");
-
-    document.getElementById("minutes")
-        .innerText =
-        String(minutes).padStart(2, "0");
-
-    document.getElementById("seconds")
-        .innerText =
-        String(seconds).padStart(2, "0");
-}
-
-updateCountdown();
-
-setInterval(updateCountdown, 1000);
-
-</script>
+</div>
 
 </body>
 </html>
